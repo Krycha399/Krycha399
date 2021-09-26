@@ -1,0 +1,69 @@
+#include <iostream>
+#include <cstdlib>
+#include <time.h>
+#include <stdio.h>
+
+
+using namespace std;
+
+int main()
+{
+    int liczba, wynik = 3;
+    float twoje_punkty=0;
+    float punkty_komputera=0;
+    string typ_komputera ;
+    string nasz_typ , wybor ;
+
+cout << "podaj ktora opcje wybierasz : kamien , papier , nozyce"<< endl ;
+
+
+    srand(time(NULL));
+    liczba = rand()%3 + 1 ;
+for(twoje_punkty==0&&punkty_komputera==0 ; twoje_punkty<=3||punkty_komputera<=3;punkty_komputera++&&twoje_punkty++)
+{
+
+
+
+cin >>  wybor ;
+srand(time(NULL));
+    liczba = rand()%3 + 1 ;
+
+
+
+    switch(liczba)
+    {
+        case 1:typ_komputera = "kamien" ; break ;
+        case 2: typ_komputera = "papier" ; break ;
+        case 3: typ_komputera = "nozyce" ; break ;
+        default: break ;
+    }
+    if(wybor==typ_komputera)
+    {
+        cout << "remis"<< endl ;
+         cout << "ty wybrales " << wybor << endl ;
+                cout << "komputer wybral: " << typ_komputera << endl ;
+    }
+    if((wybor=="kamien")&&(typ_komputera=="nozyce")|| (wybor=="nozyce")&&(typ_komputera=="papier")||(wybor=="papier")&&(typ_komputera=="kamien"))
+    {
+        cout << "gratulacje wygrales"<< endl ;
+        cout << "ty wybrales " << wybor << endl ;
+                cout << "komputer wybral: " << typ_komputera << endl ;
+               twoje_punkty = (twoje_punkty + 1)/2;
+
+   }
+
+
+    if((wybor=="kamien")&&(typ_komputera=="papier")||(wybor=="papier")&&(typ_komputera=="nozyce")||(wybor=="nozyce")&&(typ_komputera=="kamien"))
+{
+        cout <<"przegrales probuj" << endl ;
+     cout << "ty wybrales " << wybor << endl ;
+                cout << "komputer wybral: " << typ_komputera << endl ;
+                 punkty_komputera = (punkty_komputera + 1)/2 ;
+}
+}
+cout << twoje_punkty << ":"<< punkty_komputera << endl ;
+
+ getchar();
+return 0 ;
+
+}
